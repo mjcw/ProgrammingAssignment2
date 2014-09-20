@@ -10,27 +10,27 @@
 ## returns a list of for functions in the following order -- set the
 ## matrix, get the matrix, set the inverse, get the inverse
 makeCacheMatrix <- function(x = matrix()) {
-  xInverse <- NULL
+    xInverse <- NULL
   
-  # function to set the matrix
-  set <- function(y){
-    x <<- y
-    xInverse <<- NULL
-  }
+    # function to set the matrix
+    set <- function(y){
+      x <<- y
+      xInverse <<- NULL
+    }
   
-  # function to get the matrix
-  get <- function() x
-  
-  # function to get the inverse
-  getInverse <- function() xInverse
-  
-  # function to set the inverse
-  setInverse <- function(inverse){
-    xInverse <<- inverse    
-  } 
-  
-  list(set = set, get = get, 
-       setInverse = setInverse, getInverse = getInverse)
+    # function to get the matrix
+    get <- function() x
+    
+    # function to get the inverse
+    getInverse <- function() xInverse
+    
+    # function to set the inverse
+    setInverse <- function(inverse){
+      xInverse <<- inverse    
+    } 
+    
+    list(set = set, get = get, 
+         setInverse = setInverse, getInverse = getInverse)
 }
 
 
