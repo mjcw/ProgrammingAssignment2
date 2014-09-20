@@ -7,7 +7,8 @@
 ##  cacheSolve(m)
 
 ## Create a special matrix that can be used by caching function. It 
-## returns a list of 
+## returns a list of for functions in the following order -- set the
+## matrix, get the matrix, set the inverse, get the inverse
 makeCacheMatrix <- function(x = matrix()) {
   xInverse <- NULL
   
@@ -35,7 +36,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Calculates the inverese of a matrix created using makeCacheMatrix
 ## This function checks if an inverse is already calculated, if not
-## it calculates it.
+## it calculates it and returns the inverse.
 cacheSolve <- function(x, ...) {
     xInverse <- x$getInverse()
     if (!is.null(xInverse)){
